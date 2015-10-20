@@ -1,4 +1,4 @@
-import keyMirror from 'react/lib/keyMirror'
+import keyMirror from 'key-mirror'
 
 export default keyMirror({
 	RECEIVE_PRODUCTS: null,

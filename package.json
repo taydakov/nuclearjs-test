@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "nuclear-js": "^1.1.1",
+    "path": "^0.12.7",
     "react": "^0.14.0"
   },
   "devDependencies": {},
