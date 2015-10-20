@@ -4,7 +4,8 @@
   "description": "Playground for NuclearJS framework",
   "main": "index.js",
   "dependencies": {
-    "nuclear-js": "^1.1.1"
+    "nuclear-js": "^1.1.1",
+    "react": "^0.14.0"
   },
   "devDependencies": {},
   "scripts": {
