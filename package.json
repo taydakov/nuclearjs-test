@@ -1,0 +1,28 @@
+{
+  "name": "nuclearjs-test",
+  "version": "1.0.0",
+  "description": "Playground for NuclearJS framework",
+  "main": "index.js",
+  "dependencies": {
+    "nuclear-js": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taydakov/nuclearjs-test.git"
+  },
+  "keywords": [
+    "nuclearjs",
+    "flux",
+    "react"
+  ],
+  "author": "Lev Taydakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taydakov/nuclearjs-test/issues"
+  },
+  "homepage": "https://github.com/taydakov/nuclearjs-test#readme"
+}
