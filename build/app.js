@@ -67,12 +67,22 @@
 
 	var _storesCartStore2 = _interopRequireDefault(_storesCartStore);
 
+	var _actions = __webpack_require__(8);
+
+	var _actions2 = _interopRequireDefault(_actions);
+
 	_reactor2['default'].registerStores({
 		'product': _storesProductStore2['default'],
 		'cart': _storesCartStore2['default']
 	});
 
 	console.log(_reactor2['default'].evaluate([]));
+
+	_actions2['default'].fetchProducts();
+
+	setTimeout(function () {
+		console.log(_reactor2['default'].evaluate([]));
+	}, 1000);
 
 /***/ },
 /* 2 */
@@ -6435,6 +6445,67 @@
 		}) : state.setIn(['itemQty', id], 1);
 	}
 	module.exports = exports['default'];
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _apiShop = __webpack_require__(9);
+
+	var _apiShop2 = _interopRequireDefault(_apiShop);
+
+	var _reactor = __webpack_require__(2);
+
+	var _reactor2 = _interopRequireDefault(_reactor);
+
+	var _actionTypes = __webpack_require__(5);
+
+	exports['default'] = {
+		fetchProducts: function fetchProducts() {
+			_apiShop2['default'].getProducts(function (products) {
+				_reactor2['default'].dispatch(_actionTypes.RECEIVE_PRODUCTS, { products: products });
+			});
+		},
+
+		addToCart: function addToCart(product) {
+			_reactor2['default'].dispatch(_actionTypes.ADD_TO_CART, { product: product });
+		}
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports["default"] = {
+		getProducts: function getProducts(cb) {
+			setTimeout(function () {
+				cb({
+					products: [{
+						id: 1, title: "iPad 4 Mini", price: 500.01, inventory: 2, image: "../common/assets/ipad-mini.png"
+					}, {
+						id: 2, title: "H&M T-Shirt White", price: 10.99, inventory: 10, image: "../common/assets/t-shirt.png"
+					}, {
+						id: 3, title: "Charli XCX - Sucker CD", price: 19.99, inventory: 4, image: "../common/assets/sucker.png"
+					}]
+				});
+			}, 500);
+		}
+	};
+	module.exports = exports["default"];
 
 /***/ }
 /******/ ]);
